@@ -1,4 +1,4 @@
-CS3338 Assignment 10
+# CS3338 Assignment 10
 Hello class! This is your last week with Docker, nows the time to put it all together and go from:
 - Code -> Dockerfile -> Image -> docker-compose -> Upload to Docker Hub
 
