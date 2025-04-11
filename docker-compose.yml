@@ -1,0 +1,50 @@
+services:
+  # Backend Service
+  backend:
+    # Connect your build to the FOLDER location of your backend Dockerfile
+
+    
+    # Connect an open localhost port to your exposed frontend port
+
+    # Connect two volumes for backend
+    # The first one maps your local backend to the working directory
+    #     - Hint: {relative backend location}:{working directory listed in your Dockerfile}
+    # Second volume needed, is creating a volume to save the node_module folder created
+    #     - Hint: {volume name}:{working directory}/node_modules
+    #     - Hint: You can name your volume anything, it will auto create when building
+
+    # Leave this, this helps node.js know that there is something running in production
+    environment:
+      - NODE_ENV=production
+    
+    # Connect your backend to the network name created below
+
+  # Frontend Service
+  frontend:
+    # Connect your build to the FOLDER location of your frontend Dockerfile
+
+    # Connect an open localhost port to your exposed frontend port
+
+    # Connect two volumes for frontend
+    # The first one maps your local frontend to the working directory
+    #     - Hint: {relative frontend location}:{working directory listed in your Dockerfile}
+    # Second volume needed, is creating a volume to save the node_module folder created
+    #     - Hint: {volume name}:{working directory}/node_modules
+    #     - Hint: You can name your volume anything, it will auto create when building
+
+    # Leave this, this helps node.js know that there is something running in production
+    environment:
+      - NODE_ENV=development
+      - NODE_OPTIONS=--openssl-legacy-provider
+    # This makes sure the front end looks for the backend
+    depends_on:
+      - backend
+    # Connect your frontend to the network name created below
+
+volumes:
+  # list the names of the two volumes you created to hold the node_modules
+  #     - Hint: the format looks like: {volume name}:
+
+networks:
+  app-network:
+    driver: bridge
