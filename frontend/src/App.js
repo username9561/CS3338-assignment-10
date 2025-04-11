@@ -17,7 +17,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <h1>Welcome to the frontend!</h1>
+      <hr />
+      <h2>{message}</h2>
     </div>
   );
 }
