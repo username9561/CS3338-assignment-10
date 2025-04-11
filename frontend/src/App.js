@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     // Simulate fetching data from the backend
-    axios.get('http://localhost:5000')  // This URL will point to the fake backend
+    axios.get('http://localhost:5000')  // This URL will point to the fake backend || IF YOU CHANGE LOCALHOST YOU NEED TO CHANGE THIS
       .then(response => {
         setMessage(response.data.message);
       })
